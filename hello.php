@@ -1,13 +1,18 @@
 <?php 
 
-$userName = "Joe";
-$userAge = 20;
-$isUserLogin = true;
+$colors = array("red", "orange", "green", "blue", "yellow", "indigo", "violet");
 
-if($isUserLogin || $userAge > 18) {
-	echo "Hello ".$userName;
-} else {
-	echo "You have to login and you have to be older than 18";
+
+foreach ($colors as $key => $value) {
+	$colors[$key] = $value." color";
+	echo $key." ".$value." ";
+}
+
+
+echo"<br><br>";
+
+for($i = 0; $i < sizeof($colors); $i++) {
+	echo $colors[$i]."<br>";
 }
 
 ?>
