@@ -1,18 +1,24 @@
 <?php 
 
-$colors = array("red", "orange", "green", "blue", "yellow", "indigo", "violet");
+$x = 7;
+$i = 1;
 
+while ($i <= 10) {
+	$y = $x * $i;
+	echo $y."<br>";
 
-foreach ($colors as $key => $value) {
-	$colors[$key] = $value." color";
-	echo $key." ".$value." ";
+	$i++;
 }
 
+$colors = array("red", "orange", "green", "blue", "yellow", "indigo", "violet");
 
-echo"<br><br>";
+$j = 0;
 
-for($i = 0; $i < sizeof($colors); $i++) {
-	echo $colors[$i]."<br>";
+while ($j < sizeof($colors)) {
+	echo $colors[$j]."<br>";
+
+	$j++;
+
 }
 
 ?>
