@@ -1,32 +1,39 @@
 <?php 
 
-	if(isset($_GET["number"])) {
-    	$value = $_GET['number'];
+$loginPasswordArray = array(
+	"coolDaddy" => "11111",
+	"Jane" => "22222"
 
-		if(floor($value) == $value && is_numeric($value)) {
+);
 
-		if ($value % 2) {
-		  echo $value.' is odd';
-		} else {
-		  echo $value.' is even';
-		}
-		
-		} else {
-			echo("Input the whole number.");
-}
+$isLoginPasswordCorrect = false;
+
+if (isset($_POST["login"]) && isset($_POST["password"])) {
 	
+	foreach ($loginPasswordArray as $key => $value) {
+		if ($key == $_POST["login"] && $value == $_POST["password"]) {
+			$isLoginPasswordCorrect = true;
+			
+
+		} 
 
 	}
+	if ($isLoginPasswordCorrect) {
+		echo "Hello ".$_POST["login"]."!";
+	} else {
+		echo "Please input correct login and password.";
+	}
 
-	
-
+}
 ?>
 
-<p>Input whole number</p>
+<p>Input your login and password</p>
 
-<form>
+<form method="post">
 	
-	<input type="text" name="number">
-	<input type="submit" name="">
+
+	<p><input type="text" name="login"></p>
+	<p><input type="password" name="password"></p>
+	<p><input type="submit" name=""></p>
 
 </form>
